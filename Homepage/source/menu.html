@@ -1,0 +1,29 @@
+<div class="menu" id="menu">
+	<a href="index.php" style="text-decoration: none; color: black;"><h1><img src="img/house.png" alt="SmartHome" width="60px" height="60px"></h1></a>
+	<div class="menuprompt" id="mp1" onclick="menupromptclicked(1)" onmouseover="deacmp(1)" onmouseout="acmp(1)"><a href="index.php" class="menuprompta" id="link1">Home</a></div>
+	<div class="menuprompt" id="mp2" onclick="menupromptclicked(2)" onmouseover="deacmp(2)" onmouseout="acmp(2)"><a href="light.php" class="menuprompta" id="link2">Licht</a></div>
+	<div class="menuprompt" id="mp3" onclick="menupromptclicked(3)" onmouseover="deacmp(3)" onmouseout="acmp(3)"><a href="window.php" class="menuprompta" id="link3">Fenster</a></div>
+	<div class="menuprompt" id="mp4" onclick="menupromptclicked(4)" onmouseover="deacmp(4)" onmouseout="acmp(4)"><a href="security.php" class="menuprompta" id="link4">Security</a></div>
+	<div class="menuprompt" id="mp5" onclick="menupromptclicked(5)" onmouseover="deacmp(5)" onmouseout="acmp(5)"><a href="door.php" class="menuprompta" id="link5">Türe</a></div>
+	<div class="menucontent" id="mc6" onmouseenter="acmpc(6)" onmouseleave="deacmpc(6)" onmouseover="deacmp(6)" onmouseout="acmp(6)">
+		<div class="menuprompt" id="mp6" onclick="menupromptclicked(6)"><a href="settings.php" class="menuprompta" id="link6">Einstellungen</a></div>
+		<div class="menupromptcontent" id="mpc6">
+			<div class="menupromptcontentprompt" id="mpc6p1" onclick="menupromptclicked(6)" onmouseover="deacmp(6)" onmouseout="acmp(6)"><a href="" class="menuprompta" id="link7">Allgemein</a></div>
+			<div class="menupromptcontentprompt" id="mpc6p2" onclick="menupromptclicked(7)" onmouseover="deacmp(7)" onmouseout="acmp(7)"><a href="" class="menuprompta" id="link8">Automatisierung</a></div>
+		</div>
+	</div>
+</div>
+
+<?php
+	if ($secure == false) {
+	   	echo "<script type='text/javascript'>
+		   	var ofs = 0;
+			var el = document.getElementById('mp4');
+
+			window.setInterval(function(){
+			    el.style.background = 'rgba(255,0,0,'+Math.abs(Math.sin(ofs))+')';
+			    ofs += 0.01;
+			}, 10);
+		</script>";
+	}
+?>
